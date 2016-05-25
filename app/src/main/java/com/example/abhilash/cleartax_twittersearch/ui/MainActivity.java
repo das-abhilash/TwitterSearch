@@ -87,18 +87,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                                                     @Override
                                                     public void onRefresh() {
-                                                        final Handler handler = new Handler();
-                                                        handler.postDelayed(new Runnable() {
-                                                            @Override
-                                                            public void run() {
-                                                                swipeRefreshLayout.setRefreshing(false);
-                                                            }
-                                                        }, 1000);
-
-
+                                                        swipeRefreshLayout.setRefreshing(false);
                                                         UpdateData();
-
-
                                                     }
                                                 }
         );

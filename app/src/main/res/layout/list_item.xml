@@ -8,80 +8,175 @@
     android:layout_margin="4dp"
     android:clickable="true"
     android:focusable="true"
-    app:elevation= "8dp"
-    android:foreground="?selectableItemBackground">
+    android:foreground="?selectableItemBackground"
+    app:elevation="8dp">
 
-
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/tweet"
-        android:gravity="center_vertical">
-        <ImageView
-            android:id="@+id/userId"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/placeholder"
-android:layout_marginLeft="3dp"
-            android:scaleType="fitCenter"
-            android:gravity="start|center_vertical"
-           />
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp">
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                tools:text = "Hena hena"/>
-            <TextView
-                android:id="@+id/userScreenName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text = "henahena"
-               />
-        </LinearLayout>
-<ImageView
-    android:layout_width="20dp"
-    android:layout_height="20dp"
-    android:src="@drawable/symbol"
-    android:layout_gravity="end"
-   />
-    </LinearLayout>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="3dp"
-                android:textSize="15dp"
-                android:id="@+id/text"
-                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                android:textColorLink="@color/LinkColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autoLink="web"
-                tools:text = "#CFP Workshop on Noisy User-generated Text at ACL - Beijing 31 July 2015. Papers due: 11 May 2015. http://t.co/rcygyEowqH   #NLProc #WNUT15"/>
-    <TextView
-        android:id="@+id/createdAt"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="3dp"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text = "Jun 15"/>
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/tweet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/userId"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginStart="3dp"
+                android:background="@drawable/placeholder"
+                android:gravity="start|center_vertical"
+                android:scaleType="fitCenter"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/userId"
+                android:layout_toEndOf="@+id/userId"
+                android:layout_toLeftOf= "@+id/symbol"
+                android:layout_toStartOf="@+id/symbol"
+               >
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Hena hena"/>
+
+                <TextView
+                    android:id="@+id/userScreenName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="henahena"
+                    android:layout_below="@+id/userName"
+                    />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/symbol"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/symbol"
+                android:contentDescription="Twitter Symbol"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:autoLink="web"
+            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+            android:textColorLink="@color/LinkColor"
+            android:layout_below="@+id/tweet"
+            android:textSize="15sp"
+            tools:text="#CFP Workshop on Noisy User-generated Text at ACL - Beijing 31 July 2015. Papers due: 11 May 2015. http://t.co/rcygyEowqH   #NLProc #WNUT15"/>
+
+        <TextView
+            android:id="@+id/createdAt"
+            android:layout_below="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            tools:text="Jun 15"/>
+
+    </RelativeLayout>
+
+    <!-- <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:orientation="vertical">
+
+         <LinearLayout
+             android:id="@+id/tweet"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal">
+
+             <ImageView
+                 android:id="@+id/userId"
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 android:layout_marginLeft="3dp"
+                 android:background="@drawable/placeholder"
+                 android:gravity="start|center_vertical"
+                 android:scaleType="fitCenter"
+                 />
+
+             <LinearLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="4dp"
+                 android:layout_marginStart="4dp"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:id="@+id/userName"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="20dp"
+                     android:textStyle="bold"
+                     tools:text="Hena hena"/>
+
+                 <TextView
+                     android:id="@+id/userScreenName"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     tools:text="henahena"
+                     />
+             </LinearLayout>
+
+             <ImageView
+                 android:layout_width="20dp"
+                 android:layout_height="20dp"
+
+                 android:src="@drawable/symbol"
+                 />
+         </LinearLayout>
+
+         <TextView
+             android:id="@+id/text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="3dp"
+             android:layout_marginStart="3dp"
+             android:layout_marginTop="5dp"
+             android:autoLink="web"
+             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+             android:textColorLink="@color/LinkColor"
+             android:textSize="15dp"
+             tools:text="#CFP Workshop on Noisy User-generated Text at ACL - Beijing 31 July 2015. Papers due: 11 May 2015. http://t.co/rcygyEowqH   #NLProc #WNUT15"/>
+
+         <TextView
+             android:id="@+id/createdAt"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="3dp"
+             android:layout_marginStart="3dp"
+             android:layout_marginTop="5dp"
+             tools:text="Jun 15"/>
+
+     </LinearLayout>
+ -->
 
 </android.support.v7.widget.CardView>
