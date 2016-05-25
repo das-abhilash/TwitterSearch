@@ -33,7 +33,7 @@ public class Utils {
         Twitter twitter = new TwitterFactory().getInstance();
 
 
-        AccessToken accessToken = new AccessToken("575389374-bdewtESjHFp7YNkGPqUSZi9hcAXau3dP5nFDDufh", "Ay7zjeVeNas6pqga7f8azYr87lP5yUijNKNsOlK6g2Zq3");
+        AccessToken accessToken = new AccessToken(BuildConfig.Request_Token, BuildConfig.Request_Token_Secret);
         twitter.setOAuthConsumer(BuildConfig.Consumer_Key, BuildConfig.Consumer_Serect_Key);
         twitter.setOAuthAccessToken(accessToken);
         String tweeet = null;

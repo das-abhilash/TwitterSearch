@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
 
 
+        //Uncomment the <code>DTT.execute();</code> to fetch data through twitter4j library
         DownloadTwitterTask DTT = new DownloadTwitterTask(this);
         // DTT.execute();
 
