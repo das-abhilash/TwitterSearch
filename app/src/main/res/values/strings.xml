@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ClearTax-TwitterSearch</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="pref_tweet_status_key">tweet-status</string>
+
+    <string name="empty_list">OOPS!! Something Went wrong. No Tweets Available</string>
+    <string name="empty_invalid_data">No Tweets available. The Server is fetching INVALID data.</string>
+    <string name="empty_autho_problem">No weets available. Authorization Problemn. Check for an Updated version in playstore</string>
+    <string name="empty_failed_connect_server"> No Tweets available.The server is not returning data.</string>
+<!--
+    <string name="filter">Filter</string>
+-->
+    <string name="filter">%$1s -Filter</string>
+</resources>
