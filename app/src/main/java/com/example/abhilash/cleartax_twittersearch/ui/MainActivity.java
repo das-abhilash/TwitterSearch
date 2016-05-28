@@ -183,10 +183,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Cursor data = getApplicationContext().getContentResolver().query(TweetProvider.Tweets.CONTENT_URI,
                 null, null, null, sortOrder);
         twitterAdapter.swapCursor(data);
-
-       //chekc why you added this line
-        cursor = data;
-
     }
 
     private boolean isNetworkAvailable() {
