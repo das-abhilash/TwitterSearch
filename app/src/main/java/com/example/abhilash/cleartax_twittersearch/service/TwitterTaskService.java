@@ -137,7 +137,6 @@ public class TwitterTaskService extends GcmTaskService {
             }
         };
 
-// Add the interceptor to OkHttpClient
         OkHttpClient.Builder builder1 = new OkHttpClient.Builder();
         builder1.interceptors().add(interceptor1);
         OkHttpClient client1 = builder1.build();

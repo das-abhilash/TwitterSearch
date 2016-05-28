@@ -50,7 +50,7 @@ import com.google.android.gms.gcm.Task;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
 
-    public static final String SEARCH_QUERY = "cleartax";
+    public static final String SEARCH_QUERY = "ipl";
 
     static ProgressBar spinner;
     TextView twitterData;
@@ -183,6 +183,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Cursor data = getApplicationContext().getContentResolver().query(TweetProvider.Tweets.CONTENT_URI,
                 null, null, null, sortOrder);
         twitterAdapter.swapCursor(data);
+
+       //chekc why you added this line
         cursor = data;
 
     }

@@ -50,15 +50,6 @@ public class TwitterAdapter extends RecyclerView.Adapter<TwitterAdapter.ViewHold
 
     }
 
- /*   @Override
-    public long getItemId(int position) {
-        mCursor.moveToPosition(position);
-      //  String id = mCursor.getString(mCursor.getColumnIndex(TweetColumns._ID));
-
-        return mCursor.getLong(Integer.parseInt(mCursor.getString(mCursor.getColumnIndex(TweetColumns._ID))));
-
-    }*/
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
@@ -67,18 +58,6 @@ public class TwitterAdapter extends RecyclerView.Adapter<TwitterAdapter.ViewHold
         robotoThin = Typeface.createFromAsset(mContext.getAssets(), "Roboto-Thin.ttf");
         robotoLight = Typeface.createFromAsset(mContext.getAssets(), "Roboto-Light.ttf");
         final ViewHolder vh = new ViewHolder(view);
-       /* view.setOnClickListener(new View.OnClickListener() {
-            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onClick(View view) {
-              //  Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(DetailActivity.this).toBundle();
-                mCursor.moveToPosition(position);
-                String symbol = mCursor.getString(mCursor.getColumnIndex(TweetColumns.ID));
-                Intent stockDetailIntent = new Intent(mContext, DetailActivity.class);
-                stockDetailIntent.putExtra("symbol", symbol);
-                mContext.startActivity(stockDetailIntent);
-            }
-        });*/
         return vh;
     }
 
@@ -87,11 +66,6 @@ public class TwitterAdapter extends RecyclerView.Adapter<TwitterAdapter.ViewHold
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-      //  mSearches.moveToPosition(position);
-//        Search search = mSearches.get(position);
-       // String sd = search.getText();
-
-        int iu = mCursor.getCount();
         mCursor.moveToPosition(position);
         holder.userName.setText(mCursor.getString(mCursor.getColumnIndex(TweetColumns.NAME)));
         holder.userScreenName.setText(mCursor.getString(mCursor.getColumnIndex(TweetColumns.SCREEN_NAME)));
@@ -99,28 +73,9 @@ public class TwitterAdapter extends RecyclerView.Adapter<TwitterAdapter.ViewHold
         holder.tweetText.setText(tweet);
 
         String tweetDate = mCursor.getString(mCursor.getColumnIndex(TweetColumns.CREATED_AT));
-String sd =tweetDate.substring(0,3)+", "+tweetDate.substring(8,10)+" " /*+ tweetDate.substring(26,30)*/ + tweetDate.substring(4,7)+ " "+tweetDate.substring(26,30)
+String sd =tweetDate.substring(0,3)+", "+tweetDate.substring(8,10)+" " + tweetDate.substring(4,7)+ " "+tweetDate.substring(26,30)
         +" "+  tweetDate.substring(11,19) +" " +tweetDate.substring(20,25) ;
-            /*DateUtils.getRelativeTimeSpanString(
-                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
-                    System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-                    DateUtils.FORMAT_ABBREV_ALL).toString()
-                    + " by "
-                    + mCursor.getString(ArticleLoader.Query.AUTHOR));*/
-            /*String dtStart = "2010-10-15T09:27:37Z";
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-            Date date = null;
-            try {
-                date = format.parse(sd);
-            } catch (java.text.ParseException e) {
-                e.printStackTrace();
-            }
-
-            SimpleDateFormat zx = new SimpleDateFormat("yyyy-MM-dd");
-            Date asas = new Date();
-            String datetime = zx.format(date);*/
-            String strCurrentDate = "Wed, 18 Apr 2012 07:55:29 +0000";
             SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss Z", Locale.UK);
             Date newDate = null;
             try {

@@ -24,7 +24,6 @@ public interface TwitterAPI {
 
     @GET("/1.1/search/tweets.json")
     Call<Tweet> getTweets(
-          //  @Header("Authorization") String authorization,
             @Query("q") String SearchTerm
            ,@Query("count") String count);
     }
