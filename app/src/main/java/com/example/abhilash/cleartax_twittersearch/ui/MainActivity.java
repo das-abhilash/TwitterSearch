@@ -50,7 +50,7 @@ import com.google.android.gms.gcm.Task;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
 
-    public static final String SEARCH_QUERY = "ipl";
+    public static final String SEARCH_QUERY = "cleartax";
 
     static ProgressBar spinner;
     TextView twitterData;
@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     boolean connected;
     View emptyView;
     TwitterAdapter twitterAdapter;
-    Cursor cursor;
     boolean filtered = false;
 
     @Override

@@ -19,6 +19,7 @@ android {
         }
     }
     buildTypes.each {
+        //I haven't removed the API Keys for your convenience.
         it.buildConfigField 'String', 'Consumer_Key', "\"cbKNlniGZ7hXqfXR0A54gn0Kz\""
         it.buildConfigField 'String', 'Consumer_Serect_Key', "\"Czm3Nz6lvirlrM9mkcbDjPuuTmhBtEtvjFSILon2JQUC4MHkW7\""
         it.buildConfigField 'String', 'Request_Token', "\"575389374-bdewtESjHFp7YNkGPqUSZi9hcAXau3dP5nFDDufh\""
